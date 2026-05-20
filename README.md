@@ -1,4 +1,4 @@
-Exiled Exchange 2 日本語翻訳改善版
+# Exiled Exchange 2 日本語翻訳改善版
 
 Kvan7/Exiled-Exchange-2 の日本語翻訳改善版です。
 タスクトレイの右クリックメニューを日本語化し、未翻訳部分も追加翻訳しています。
