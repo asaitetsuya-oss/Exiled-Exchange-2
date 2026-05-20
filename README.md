@@ -1,3 +1,16 @@
+Exiled Exchange 2 日本語翻訳改善版
+
+Kvan7/Exiled-Exchange-2 の日本語翻訳改善版です。
+タスクトレイの右クリックメニューを日本語化し、未翻訳部分も追加翻訳しています。
+
+実際の使用風景はこちら：
+Twitch - asai_501xx
+
+オリジナルプロジェクト：
+Exiled Exchange 2 GitHub
+
+<img width="222" height="198" alt="スクリーンショット 2026-05-20 143912" src="https://github.com/user-attachments/assets/976a7932-9d70-4719-b012-f85404b7f6ca" />
+
 # ![Perfect Jewelers Orb](./renderer/public/images/jeweler.png) Exiled Exchange 2
 
 [![GitHub Downloads (specific asset, latest release)](https://img.shields.io/github/downloads/kvan7/exiled-exchange-2/latest/Exiled-Exchange-2-Setup-0.15.0.exe?style=plastic&link=https%3A%2F%2Ftooomm.github.io%2Fgithub-release-stats%2F%3Fusername%3Dkvan7%26repository%3DExiled-Exchange-2)](https://tooomm.github.io/github-release-stats/?username=kvan7&repository=Exiled-Exchange-2)
