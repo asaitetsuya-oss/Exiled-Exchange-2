@@ -4,10 +4,10 @@ Kvan7/Exiled-Exchange-2 の日本語翻訳改善版です。
 タスクトレイの右クリックメニューを日本語化し、未翻訳部分も追加翻訳しています。
 
 実際の使用風景はこちら：
-Twitch - asai_501xx
+[Twitch配信](https://www.twitch.tv/asai_501xx)  
 
-オリジナルプロジェクト：
-Exiled Exchange 2 GitHub
+オリジナルプロジェクトはこちら：
+[Exiled Exchange 2](https://github.com/Kvan7/Exiled-Exchange-2)  
 
 <img width="222" height="198" alt="スクリーンショット 2026-05-20 143912" src="https://github.com/user-attachments/assets/976a7932-9d70-4719-b012-f85404b7f6ca" />
 
