@@ -36,29 +36,29 @@ export class AppTray {
   rebuildMenu() {
     const contextMenu = Menu.buildFromTemplate([
       {
-        label: "Settings/League",
+        label: "設定 / リーグ",
         click: () => {
           dialog.showMessageBox({
-            title: "Settings",
-            message: `Open Path of Exile 2 and press "${this.overlayKey}". Click on the button with cog icon there.`,
+            title: "設定",
+            message: `Path of Exile 2 を開き、「${this.overlayKey}」を押してください。歯車アイコンのボタンをクリックしてください。`,
           });
         },
       },
       {
-        label: "Open in Browser",
+        label: "ブラウザで開く",
         click: () => {
           shell.openExternal(`http://localhost:${this.serverPort}`);
         },
       },
       { type: "separator" },
       {
-        label: "Open config folder",
+        label: "設定フォルダを開く",
         click: () => {
           shell.openPath(path.join(app.getPath("userData"), "apt-data"));
         },
       },
       {
-        label: "Quit",
+        label: "終了",
         click: () => {
           app.quit();
         },
