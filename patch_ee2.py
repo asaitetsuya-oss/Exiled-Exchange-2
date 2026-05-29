@@ -378,4 +378,4 @@ for f in [os.path.join(SRC, 'crowdin.yml'), os.path.join(SRC, '.github', 'FUNDIN
         os.remove(f)
         print(f'[OK]   deleted: {os.path.basename(f)}')
 
-print('パッチ完了')
+print('Patch complete')
