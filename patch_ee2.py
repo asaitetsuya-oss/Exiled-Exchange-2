@@ -368,7 +368,7 @@ if os.path.exists(JA_JSON):
 
     with open(JA_JSON, 'w', encoding='utf-8') as _f:
         _json.dump(_ja, _f, ensure_ascii=False, indent=2)
-    print('[OK]   ja/app_i18n.json (69キー追加)')
+    print('[OK]   ja/app_i18n.json (69 keys added)')
 else:
     print(f'[SKIP] ja/app_i18n.json not found')
 
