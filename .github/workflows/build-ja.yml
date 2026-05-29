@@ -4,15 +4,29 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'バージョン (例: 0.13.10-ja1)'
-        required: true
-        default: '0.13.10-ja1'
+        description: 'バージョン (空欄で本家最新を自動取得、例: 0.15.0-ja)'
+        required: false
+        default: ''
 
 jobs:
   renderer:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+
+    - name: Resolve version
+      id: ver
+      run: |
+        if [ -z "${{ github.event.inputs.version }}" ]; then
+          TAG=$(curl -s https://api.github.com/repos/Kvan7/Exiled-Exchange-2/releases/latest | jq -r .tag_name | sed 's/^v//')
+          echo "version=${TAG}-ja" >> $GITHUB_OUTPUT
+        else
+          echo "version=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Apply patch
+      run: python patch_ee2.py ${{ github.workspace }}
+
     - uses: actions/setup-node@v4
       with:
         node-version: 24
@@ -36,6 +50,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v4
+
+    - name: Apply patch
+      run: python patch_ee2.py ${{ github.workspace }}
+
     - uses: actions/setup-node@v4
       with:
         node-version: 24
