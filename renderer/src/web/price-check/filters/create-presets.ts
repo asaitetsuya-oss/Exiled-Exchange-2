@@ -8,6 +8,7 @@ import { ItemCategory, ItemRarity, ParsedItem } from "@/parser";
 import type { FilterPreset } from "./interfaces";
 import { PriceCheckWidget } from "@/web/overlay/widgets";
 import { hasCraftingValue, likelyFinishedItem } from "./common";
+import { createUniquePresets, PRESET_UNIQUES } from "./create-unique-filters";
 
 const ROMAN_NUMERALS = ["I", "II", "III", "IV", "V"];
 
@@ -31,7 +32,8 @@ export function createPresets(
     autoFillEmptyAugmentSockets: PriceCheckWidget["autoFillEmptyRuneSockets"];
   },
 ): { presets: FilterPreset[]; active: string } {
-  if (item.info.refName === "Expedition Logbook") {
+  // logbooks aren't real anymore
+  if (item.info.refName === "logbook here") {
     return {
       active: ROMAN_NUMERALS[0],
       presets: item.logbookAreaMods!.map<FilterPreset>((area, idx) => ({
@@ -54,7 +56,8 @@ export function createPresets(
       item.category === ItemCategory.HeistContract ||
       item.category === ItemCategory.HeistBlueprint ||
       item.category === ItemCategory.Sentinel ||
-      item.category === ItemCategory.Tablet) &&
+      item.category === ItemCategory.Tablet ||
+      item.category === ItemCategory.Wombgift) &&
       item.rarity !== ItemRarity.Unique) ||
     (item.category === ItemCategory.Currency && item.trials?.numberOfTrials)
   ) {
@@ -68,6 +71,10 @@ export function createPresets(
         },
       ],
     };
+  }
+
+  if (PRESET_UNIQUES.has(item.info.refName)) {
+    return createUniquePresets(item, opts);
   }
 
   // TODO: pseudo change here
